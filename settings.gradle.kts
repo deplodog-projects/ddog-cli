@@ -1,2 +1,2 @@
-include("ddog-cli-core", "ddog-cli-app")
+include("ddog.cli.core", "ddog.cli.app")
 

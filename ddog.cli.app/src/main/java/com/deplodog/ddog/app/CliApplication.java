@@ -1,9 +1,8 @@
-package com.deplodog.ddog;
+package com.deplodog.ddog.app;
 
 import com.beust.jcommander.JCommander;
 import com.beust.jcommander.Parameter;
-import lombok.Getter;
-import lombok.Setter;
+import com.deplodog.ddog.core.EchoService;
 
 public class CliApplication {
 
@@ -14,11 +13,9 @@ public class CliApplication {
                 .addObject(config)
                 .build();
 
-        System.out.println(config.getEcho());
+        EchoService.echo(config.echo);
     }
 
-    @Getter
-    @Setter
     public static class Config {
 
         @Parameter(names = {"-e"}, description = "Echo.")

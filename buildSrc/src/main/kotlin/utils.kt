@@ -1,19 +1,13 @@
 import org.gradle.api.Project
-
-import org.gradle.kotlin.dsl.*
+import org.gradle.kotlin.dsl.dependencies
 
 fun Project.commonDependencies() {
     dependencies {
-        "compileOnly"("com.google.code.findbugs:jsr305:${Dep.findbugsJsr305}")
+        "compileOnly"("com.google.code.findbugs:jsr305:${Libs.findbugsJsr305}")
 
-        "compileOnly"("org.projectlombok:lombok:${Dep.lombok}")
-        "testCompileOnly"("org.projectlombok:lombok:${Dep.lombok}")
-        "annotationProcessor"("org.projectlombok:lombok:${Dep.lombok}")
-        "testAnnotationProcessor"("org.projectlombok:lombok:${Dep.lombok}")
+        "testCompile"("org.mockito:mockito-core:${Libs.mockito}")
 
-        "testCompile"("org.mockito:mockito-core:${Dep.mockito}")
-
-        "testImplementation"("org.junit.jupiter:junit-jupiter-api:${Dep.jupiter}")
-        "testRuntimeOnly"("org.junit.jupiter:junit-jupiter-engine:${Dep.jupiter}")
+        "testImplementation"("org.junit.jupiter:junit-jupiter-api:${Libs.jupiter}")
+        "testRuntimeOnly"("org.junit.jupiter:junit-jupiter-engine:${Libs.jupiter}")
     }
 }
