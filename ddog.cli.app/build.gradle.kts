@@ -11,8 +11,7 @@ application {
 
 commonDependencies()
 dependencies {
-    implementation(project(":ddog.cli.core"))
-    implementation("com.beust:jcommander:${Libs.jCommander}")
+    compile(project(":ddog.cli.core"))
 }
 
 jlink {
@@ -27,7 +26,7 @@ jlink {
         skipInstaller = false
         installerName = "ddog"
         installerOptions = listOf(
-                "--app-version", "1.0",
+                "--app-version", "0.0.1",
                 "--description", "CLI to simplify Kubernetes deployment, see https://deplodog.com for details",
                 "--vendor", "Deplodog"
         )
